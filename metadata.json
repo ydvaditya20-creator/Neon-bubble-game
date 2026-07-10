@@ -1,0 +1,6 @@
+{
+  "name": "Neon Merge",
+  "description": "An addictive neon-themed physics merge puzzle. Drop glowing cosmic orbs, match same-colored orbs, and merge them into a giant Supernova! (एक मजेदार नेऑन कॉस्मिक ऑर्ब्स मर्ज करने वाला गेम)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
