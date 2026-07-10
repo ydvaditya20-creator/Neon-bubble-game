@@ -9,8 +9,8 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig(() => {
   return {
-   base: '/aapke-repository-ka-naam/', // Shuru aur aakhiri mein slash (/) zaroori hai
- // <--- Yeh line aapke game ko GitHub Pages par chalu karegi
+    // TODO: 'apne-repo-ka-naam' ko mita kar apni GitHub repository ka asli naam likhein
+    base: '/Neon-bubble-game/', 
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
