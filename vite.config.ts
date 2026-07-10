@@ -9,7 +9,8 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig(() => {
   return {
-    base: './', // <--- Yeh line aapke game ko GitHub Pages par chalu karegi
+   base: '/aapke-repository-ka-naam/', // Shuru aur aakhiri mein slash (/) zaroori hai
+ // <--- Yeh line aapke game ko GitHub Pages par chalu karegi
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
