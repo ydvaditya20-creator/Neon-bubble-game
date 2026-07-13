@@ -45,7 +45,7 @@ class AudioSynthesizer {
       osc.frequency.setValueAtTime(600, this.ctx.currentTime);
       osc.frequency.exponentialRampToValueAtTime(150, this.ctx.currentTime + 0.15);
 
-      gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
+      gain.gain.setValueAtTime(0.8, this.ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.15);
 
       osc.connect(gain);
@@ -65,7 +65,7 @@ class AudioSynthesizer {
 
     try {
       // Scale volume with collision velocity
-      const volume = Math.min(0.06, Math.max(0.01, velocity * 0.015));
+      const volume = Math.min(0.4, Math.max(0.01, velocity * 0.015));
       if (volume < 0.01) return;
 
       const osc = this.ctx.createOscillator();
@@ -106,7 +106,7 @@ class AudioSynthesizer {
       osc1.frequency.setValueAtTime(baseFreq, now);
       osc1.frequency.exponentialRampToValueAtTime(baseFreq * 1.5, now + 0.25);
 
-      gain1.gain.setValueAtTime(0.18, now);
+      gain1.gain.setValueAtTime(0.4, now);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
 
       const osc2 = this.ctx.createOscillator();
@@ -114,7 +114,7 @@ class AudioSynthesizer {
       osc2.type = "sine";
       osc2.frequency.setValueAtTime(baseFreq * 2.01, now);
 
-      gain2.gain.setValueAtTime(0.08, now);
+      gain2.gain.setValueAtTime(0.4, now);
       gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
 
       osc1.connect(gain1);
@@ -137,7 +137,7 @@ class AudioSynthesizer {
       subOsc.frequency.setValueAtTime(subFreq, now);
       subOsc.frequency.exponentialRampToValueAtTime(30, now + 0.22);
 
-      const maxSubGain = Math.min(0.45, 0.15 + tierIndex * 0.04);
+      const maxSubGain = Math.min(0.8, 0.15 + tierIndex * 0.04);
       subGain.gain.setValueAtTime(maxSubGain, now);
       subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
 
@@ -165,7 +165,7 @@ class AudioSynthesizer {
       filterNode.Q.setValueAtTime(1.8, now);
 
       const noiseGain = this.ctx.createGain();
-      const maxNoiseGain = Math.min(0.3, 0.08 + tierIndex * 0.025);
+      const maxNoiseGain = Math.min(0.6, 0.08 + tierIndex * 0.025);
       noiseGain.gain.setValueAtTime(maxNoiseGain, now);
       noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
 
@@ -193,7 +193,7 @@ class AudioSynthesizer {
       osc.type = "sine";
       osc.frequency.setValueAtTime(baseFreq, now);
 
-      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.setValueAtTime(0.5, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
 
       osc.connect(gain);
@@ -223,7 +223,7 @@ class AudioSynthesizer {
         osc.type = "sine";
         osc.frequency.setValueAtTime(freq, now + idx * noteDuration);
 
-        gain.gain.setValueAtTime(0.08, now + idx * noteDuration);
+        gain.gain.setValueAtTime(0.8, now + idx * noteDuration);
         gain.gain.exponentialRampToValueAtTime(0.001, now + idx * noteDuration + 0.2);
 
         osc.connect(gain);
@@ -258,7 +258,7 @@ class AudioSynthesizer {
       filter.frequency.setValueAtTime(600, now);
       filter.frequency.exponentialRampToValueAtTime(80, now + 1.2);
 
-      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.setValueAtTime(0.5, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 1.3);
 
       osc.connect(filter);
